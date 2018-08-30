@@ -2,6 +2,7 @@ package zw.domain;
 
 import zw.calculator.factory.Operation;
 import zw.calculator.factory.OperationFactory;
+import zw.sales.strategy.CashContext;
 
 public class Main {
 
@@ -12,6 +13,11 @@ public class Main {
 		operation.setNumberA(2);
 		operation.setNumberB(1);
 		double result = operation.getResult();
+		
+		//使用策略模式和工厂模式设计超市收银优惠系统
+		CashContext cashContext = new CashContext("正常");
+		double totalMoney = cashContext.getResult(550);
+
 	}
 
 }
