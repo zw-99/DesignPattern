@@ -1,12 +1,13 @@
 package zw.domain;
 
-
 import zw.calculator.factory.Operation;
 import zw.calculator.factory.OperationFactory;
 import zw.clothing.decorator.LeatherShoes;
 import zw.clothing.decorator.Person;
 import zw.clothing.decorator.Suit;
 import zw.clothing.decorator.Tie;
+import zw.pursuit.proxy.Gril;
+import zw.pursuit.proxy.Proxy;
 import zw.sales.strategy.CashContext;
 
 public class Main {
@@ -32,7 +33,13 @@ public class Main {
 		tie.decrate(leatherShoes);
 		suit.decrate(tie);
 		suit.show();
-
+		System.out.println();
+		
+		//使用代理模式模拟追女孩
+		Gril gril = new Gril("XX");
+		Proxy proxy = new Proxy(gril);
+		proxy.giveFlowers();
+		proxy.giveChocolate();
 	}
 
 }
