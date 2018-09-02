@@ -1,4 +1,4 @@
-package zw.calculator.factory;
+package zw.calculator.factory.simple;
 
 public class OperationFactory {
 	public static Operation createOperation(String operate) {

@@ -1,4 +1,4 @@
-package zw.calculator.factory;
+package zw.calculator.factory.simple;
 
 public abstract class Operation {
 	private double numberA = 0;
