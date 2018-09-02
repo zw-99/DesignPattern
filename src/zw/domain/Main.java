@@ -1,5 +1,6 @@
 package zw.domain;
-
+import zw.calculator.factory.*;
+import zw.calculator.factory.AddFactory;
 import zw.calculator.factory.simple.Operation;
 import zw.calculator.factory.simple.OperationFactory;
 import zw.clothing.decorator.LeatherShoes;
@@ -19,6 +20,20 @@ public class Main {
 		operation.setNumberA(2);
 		operation.setNumberB(1);
 		double result = operation.getResult();
+		
+		//工厂模式设计面向对象计算器
+		//加法
+		IFactory addFactory = new AddFactory();
+		zw.calculator.factory.Operation operationAdd = addFactory.createOperation();
+		operationAdd.setNumberA(4);
+		operationAdd.setNumberB(3);
+		double addResult = operationAdd.getResult();
+		//减法
+		IFactory subFactory = new SubFactory();
+		zw.calculator.factory.Operation operationSub = subFactory.createOperation();
+		operationSub.setNumberA(4);
+		operationSub.setNumberB(3);
+		double subResult = operationSub.getResult();	
 		
 		//使用策略模式和工厂模式设计超市收银优惠系统
 		CashContext cashContext = new CashContext("正常");
