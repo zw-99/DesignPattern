@@ -9,6 +9,7 @@ import zw.clothing.decorator.Suit;
 import zw.clothing.decorator.Tie;
 import zw.pursuit.proxy.Gril;
 import zw.pursuit.proxy.Proxy;
+import zw.resume.prototype.Resume;
 import zw.sales.strategy.CashContext;
 
 public class Main {
@@ -55,6 +56,16 @@ public class Main {
 		Proxy proxy = new Proxy(gril);
 		proxy.giveFlowers();
 		proxy.giveChocolate();
+		
+		//原型模式设计简历
+		Resume resume1 = new Resume("zw");
+		resume1.setPersonInformation("男", "23");
+		resume1.setWork("2017-04", "渝东");
+		resume1.show();
+		
+		Resume resume2 = (Resume)resume1.clone();
+		resume2.setWork("2017-09", "学校");
+		resume2.show();
 	}
 
 }
