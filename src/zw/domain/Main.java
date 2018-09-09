@@ -16,6 +16,7 @@ import zw.pursuit.proxy.Gril;
 import zw.pursuit.proxy.Proxy;
 import zw.resume.prototype.Resume;
 import zw.sales.strategy.CashContext;
+import zw.work.state.Work;
 
 public class Main {
 
@@ -95,7 +96,18 @@ public class Main {
 		resume2.setWork("2017-09", "学校");
 		resume2.show();
 		
-		
+		System.out.println("***********原型模式***********");
+		//状态模式模式工作状态
+		Work work = new Work();
+		work.setTime(10);
+		work.writeProgram();
+		work.setTime(15);
+		work.writeProgram();
+		work.setTime(20);
+		//work.setFinished(true);
+		work.writeProgram();
+		work.setTime(23);
+		work.writeProgram();
 	}
 
 }
