@@ -1,4 +1,5 @@
 package zw.domain;
+
 import zw.calculator.factory.*;
 import zw.calculator.factory.AddFactory;
 import zw.calculator.factory.simple.Operation;
@@ -17,6 +18,7 @@ import zw.pursuit.proxy.Proxy;
 import zw.resume.prototype.Resume;
 import zw.sales.strategy.CashContext;
 import zw.work.state.Work;
+import zw.adapter.*;
 
 public class Main {
 
@@ -96,6 +98,7 @@ public class Main {
 		resume2.setWork("2017-09", "学校");
 		resume2.show();
 		
+		
 		System.out.println("***********原型模式***********");
 		//状态模式模式工作状态
 		Work work = new Work();
@@ -108,6 +111,12 @@ public class Main {
 		work.writeProgram();
 		work.setTime(23);
 		work.writeProgram();
+		
+		
+		System.out.println("***********适配器模式***********");
+		//适配器模式原型
+		Target target = new Adapter();
+		target.request();
 	}
 
 }
